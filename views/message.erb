@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title><@%= title %></title>
+		<title><%= @title %></title>
 		<style type="text/css">
 		   H1 { 
 		    font-size: 120%; /* Размер шрифта */
@@ -17,7 +17,9 @@
 		  
 	</head>
 	<body>
-<h1><%= @message %></h1>
+<h1><%= @title %></h1>
+	
+<p>	<%= @message %></p>
 
 </body>
 </html>
