@@ -4,6 +4,22 @@ get '/' do
   erb :index
 end
 
+get '/admin' do
+  erb :admin
+end
+
+post '/admin' do
+  @usnm = params[:na]
+  @pwd = params[:pw]
+  if @usnm == 'admin' && @pwd == 'assword'
+    @message = File.open 'users.txt', 'r'
+    return erb :message
+  else
+    @message = 'Access denied!'
+    return erb :message
+  end
+end
+
 post '/' do
   @name = params[:username]
   @phone = params[:phone]
